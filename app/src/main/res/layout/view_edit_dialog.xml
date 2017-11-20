@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_dialog_layout_design_user_input"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_title_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/et_input_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:maxLength="12"
+        android:hint="Enter your mobile number" />
+
+    <TextView
+        android:id="@+id/tv_input_error"
+        style="@style/ErrorTextViewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_note_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note: "
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+</LinearLayout>

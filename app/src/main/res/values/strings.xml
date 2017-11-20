@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Icarasia</string>
+    <string name="loading">Loading</string>
+    <string name="complete_form">Please complete the form</string>
+    <string name="signup">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="edit">Edit</string>
+
+    <!--Sign Up-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="user_type">User Type</string>
+    <string name="ut_Broker">Broker</string>
+    <string name="ut_Agent">Agent</string>
+    <string name="ut_Dealer">Dealer</string>
+    <string name="ut_Private">Private</string>
+
+    <string name="email_hint">Email*</string>
+    <string name="password_hint">Password*</string>
+    <string name="mobile_hint">Mobile*</string>
+
+    <string name="email_exist">Email already exist</string>
+    <string name="email_error">Email is not valid</string>
+    <string name="password_error">Password should contain one special character and minimum 8 character required</string>
+    <string name="mobile_error">Mobile number is not valid</string>
+    <string name="logout">Logout</string>
+
+    <string name="user_type_toast">Your account type is</string>
+    <string name="mobile_edit">Note : Mobile number should start with 601</string>
+    <string name="mobile_error_equal">This mobile number is your current number</string>
+    <string name="success">Success</string>
+    <string name="failed">Failed</string>
+
+
+</resources>
