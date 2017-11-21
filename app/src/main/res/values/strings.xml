@@ -26,6 +26,7 @@
     <string name="email_error">Email is not valid</string>
     <string name="password_error">Password should contain one special character and minimum 8 character required</string>
     <string name="mobile_error">Mobile number is not valid</string>
+    <string name="mobile_error_not_enough">Need at least 11 valid number</string>
     <string name="logout">Logout</string>
 
     <string name="user_type_toast">Your account type is</string>
@@ -33,6 +34,5 @@
     <string name="mobile_error_equal">This mobile number is your current number</string>
     <string name="success">Success</string>
     <string name="failed">Failed</string>
-
 
 </resources>

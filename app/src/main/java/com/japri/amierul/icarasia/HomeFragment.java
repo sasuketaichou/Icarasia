@@ -157,9 +157,7 @@ public class HomeFragment  extends BaseFragment implements View.OnClickListener{
         String mTitle = getString(R.string.edit);
         String message = getString(R.string.mobile_edit);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         final View dialogView = getActivity().getLayoutInflater().inflate(R.layout.view_edit_dialog,null);
-        builder.setView(dialogView);
 
         TextView title = dialogView.findViewById(R.id.tv_title_dialog);
         title.setText(mTitle);
@@ -216,31 +214,44 @@ public class HomeFragment  extends BaseFragment implements View.OnClickListener{
             }
         });
 
-        builder.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
+        AlertDialog dialog = new AlertDialog.Builder(getContext())
+                .setView(dialogView)
+                .setPositiveButton("SAVE",null)
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).create();
+
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onShow(final DialogInterface dialog) {
 
-                String mobile = input.getText().toString();
+                Button positiveButton = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
+                positiveButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String mobile = input.getText().toString();
 
-                if(ValidUtil.checkMobile(mobile) && !mobile.equals(tv_mobile_value.getText().toString())){
-                    //save here
-                    showProgressDialog();
-                    saveNewMobile(mobile);
-                } else {
-                    showToast(getString(R.string.failed));
-                }
+                        if(ValidUtil.checkMobile(mobile) && !mobile.equals(tv_mobile_value.getText().toString())){
+
+                            hideErrorText(errView);
+                            //save here
+                            dialog.dismiss();
+                            showProgressDialog();
+                            saveNewMobile(mobile);
+
+                        } else {
+                            showErrorText(errView,getString(R.string.mobile_error_not_enough));
+                        }
+                    }
+                });
+
             }
         });
 
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        builder.setCancelable(false);
-        builder.create().show();
+        dialog.show();
     }
 
     private void saveNewMobile(final String mobile) {
