@@ -251,6 +251,8 @@ public class HomeFragment  extends BaseFragment implements View.OnClickListener{
             }
         });
 
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
 
